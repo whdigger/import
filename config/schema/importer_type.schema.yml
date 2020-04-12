@@ -1,0 +1,32 @@
+import.importer_type.*:
+  type: config_entity
+  label: 'Importer type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Name'
+    uuid:
+      type: string
+    entityTypeMaterial:
+      type: string
+      label: 'Type select material'
+    primaryKey:
+      type: string
+      label: 'The uniq field'
+    mappings:
+      type: sequence
+
+field.storage_settings.importer_meta:
+  type: base_entity_reference_field_settings
+  label: 'Importer info'
+
+field.field_settings.importer_meta:
+  type: mapping
+  label: 'Importer info item settings'
+  mapping:
+    hash:
+      type: string
+      label: 'Uniq primary key'

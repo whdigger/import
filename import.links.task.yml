@@ -1,0 +1,27 @@
+# Importer routing definition
+
+entity.importer.canonical:
+  route_name: entity.importer.canonical
+  base_route: entity.importer.canonical
+  title: 'View'
+
+entity.importer.edit_form:
+  route_name: entity.importer.edit_form
+  base_route: entity.importer.canonical
+  title: 'Edit'
+
+entity.importer.delete_form:
+  route_name:  entity.importer.delete_form
+  base_route:  entity.importer.canonical
+  title: Delete
+  weight: 10
+
+entity.importer_type.edit_form:
+  route_name: entity.importer_type.edit_form
+  title: Edit
+  base_route: entity.importer_type.edit_form
+
+import.importer:
+  route_name: import.importer
+  title: Importer
+  base_route: system.admin_content

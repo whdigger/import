@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains import.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\import\Entity\Importer;
+
+/**
+ * Implements hook_help().
+ */
+function import_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the import module.
+    case 'help.page.import':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Importing Rss feed it into news') . '</p>';
+      
+      return $output;
+    
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function import_cron()
+{
+  // @TODO This place need add lock
+  $ids = \Drupal::entityQuery('importer')
+    ->execute();
+  
+  foreach (Importer::loadMultiple($ids) as $importer) {
+    if (!$importer->isLocked()) {
+      $importer->startImport();
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function import_theme_suggestions_importer(array $variables)
+{
+  $suggestions = [];
+  $entity = $variables['elements']['#importer'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  
+  $suggestions[] = 'importer__' . $sanitized_view_mode;
+  $suggestions[] = 'importer__' . $entity->bundle();
+  $suggestions[] = 'importer__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'importer__' . $entity->id();
+  $suggestions[] = 'importer__' . $entity->id() . '__' . $sanitized_view_mode;
+  
+  return $suggestions;
+}

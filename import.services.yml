@@ -1,0 +1,18 @@
+services:
+  plugin.manager.import.entityHandler:
+    class: Drupal\import\Plugin\ImporterManager
+    arguments: ['entityHandler', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.import.fetcher:
+    class: Drupal\import\Plugin\ImporterManager
+    arguments: ['fetcher', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+  plugin.manager.import.parser:
+    class: Drupal\import\Plugin\ImporterManager
+    arguments: ['parser', '@container.namespaces', '@cache.default', '@language_manager', '@module_handler']
+
+  plugin.import.form_factory:
+    class: Drupal\import\Plugin\PluginFormFactory
+    arguments: ['@class_resolver']
+
+  plugin.import.fields.file:
+    class: Drupal\import\Importer\Fields\File
+    arguments: ['@http_client', '@token']

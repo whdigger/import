@@ -1,0 +1,20 @@
+
+# Importer menu items definition
+import.importer:
+  title: 'Importer list'
+  route_name: import.importer
+  description: 'List Importer entities'
+  parent: system.admin_content
+  weight: 200
+
+entity.importer_type.collection:
+  title: 'Importer types'
+  parent: system.admin_structure
+  description: 'Configure one or more types import in content.'
+  route_name: entity.importer_type.collection
+  weight: 199
+
+entity.importer_type.add_form:
+  title: 'Add importer type'
+  route_name: entity.importer_type.add_form
+  parent: entity.importer_type.collection

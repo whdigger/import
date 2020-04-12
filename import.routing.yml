@@ -1,0 +1,18 @@
+import.importer:
+  path: '/admin/content/importer'
+  defaults:
+    _title: 'Imports'
+    _entity_list: 'importer'
+  requirements:
+    _permission: 'access importer overview'
+
+entity.importer.import:
+  path: '/admin/structure/importer/{importer}/import'
+  defaults:
+    _entity_form: 'importer.import'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_access: 'importer.import'
+    importer: \d+
+

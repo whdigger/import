@@ -1,0 +1,5 @@
+name: 'Import Content'
+type: module
+description: 'Importing Rss feed it into news'
+core: 8.x
+package: 'Custom'

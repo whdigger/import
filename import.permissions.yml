@@ -1,0 +1,22 @@
+add importer entities:
+  title: 'Create new Importer entities'
+
+administer importer entities:
+  title: 'Administer Importer entities'
+  description: 'Allow to access the administration form to configure Importer entities.'
+  restrict access: true
+
+delete importer entities:
+  title: 'Delete Importer entities'
+
+edit importer entities:
+  title: 'Edit Importer entities'
+
+view published importer entities:
+  title: 'View published Importer entities'
+
+view unpublished importer entities:
+  title: 'View unpublished Importer entities'
+
+import importer entities:
+  title: 'Import entities'

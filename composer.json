@@ -1,0 +1,13 @@
+{
+    "name": "import",
+    "type": "drupal-module",
+    "description": "Importing Rss feed it into news",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/import",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/import",
+        "source": "http://cgit.drupalcode.org/import"
+    }
+}
